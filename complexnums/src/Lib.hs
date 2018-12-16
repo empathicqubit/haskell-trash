@@ -56,8 +56,9 @@ someFunc = showResults <$> firstNumber <*> secondNumber >>= putStrLn
     where
         showResults f s = 
             [
+                "Added: ",
                 addComplex f s & show, 
-                "\n", 
+                "\nMultiplied: ", 
                 multiplyComplex f s & show
             ] & concat
         firstNumber = ("Enter a complex number in the form of a + bi: " & prompt(=~ complexNumber)) <&> stringToComplex
